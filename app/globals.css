@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* KM18 Brand Palette */
   --km-orange: #EB7955;
@@ -18,7 +20,7 @@
   --muted: #6B7280;
 }
 
-[data-theme="dark"] {
+.dark {
   /* Dark Theme Base (Cyber/Space) */
   --background: #030014;
   --foreground: #ffffff;
