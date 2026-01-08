@@ -50,10 +50,10 @@ export default function TransmissionSection() {
             className="flex items-center gap-3 mb-2"
         >
             <Radio className="text-km-hot-pink animate-pulse" size={20} />
-            <span className="font-mono text-xs text-km-hot-pink tracking-[0.3em] uppercase">Incoming Transmission</span>
+            <span className="font-mono text-xs text-km-hot-pink tracking-[0.3em] uppercase">Stay Connected</span>
         </motion.div>
         <h2 className="font-pinyon text-5xl md:text-6xl text-center text-gray-900 dark:text-white">
-            The Digital Pulse
+            The World of KM18
         </h2>
       </div>
 
@@ -70,7 +70,7 @@ export default function TransmissionSection() {
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                     <Youtube size={20} className="text-red-500" />
-                    <span className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">LATEST BROADCAST</span>
+                    <span className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">FEATURED CONTENT</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1 bg-red-500/10 rounded-full border border-red-500/20">
                     <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
@@ -112,7 +112,7 @@ export default function TransmissionSection() {
         >
             <div className="flex items-center gap-2 mb-6">
                 <Instagram size={20} className="text-km-hot-pink" />
-                <span className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">VISUAL LOGS</span>
+                <span className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">LATEST MOMENTS</span>
             </div>
 
             {INSTAGRAM_WIDGET_URL ? (
@@ -143,7 +143,7 @@ export default function TransmissionSection() {
                             </div>
                             <div className="h-24 bg-gray-100 dark:bg-white/5 rounded-lg mb-3 flex items-center justify-center text-gray-400 text-xs">
                                 {/* Placeholder for actual image */}
-                                <span className="font-mono">IMG_00{item.id}</span>
+                                <span className="font-mono">POST</span>
                             </div>
                             <p className="text-xs text-gray-600 dark:text-gray-400 font-mono line-clamp-2">
                                 {item.caption}
