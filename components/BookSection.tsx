@@ -46,11 +46,38 @@ export default function BookSection() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="flex-1 flex justify-center items-center"
+        className="flex-1 flex justify-center items-center relative"
       >
-        <div className="relative w-72 h-[450px] md:w-96 md:h-[600px] group cursor-pointer hover:scale-105 transition-transform duration-500 ease-out">
+        {/* Pulsing Glow Effect */}
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute w-64 h-96 md:w-80 md:h-[500px] bg-km-orange/30 rounded-full blur-[100px] z-0"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute w-64 h-96 md:w-80 md:h-[500px] bg-km-hot-pink/20 rounded-full blur-[120px] z-0"
+        />
+
+        <div className="relative w-72 h-[450px] md:w-96 md:h-[600px] group cursor-pointer hover:scale-105 transition-transform duration-500 ease-out z-10">
             {/* Real 3D Image Cover */}
-            <div className="relative w-full h-full drop-shadow-[0_20px_50px_rgba(235,121,85,0.3)]">
+            <div className="relative w-full h-full drop-shadow-[0_0_30px_rgba(235,121,85,0.5)]">
                  <Image 
                     src="/book-cover-shop.png" 
                     alt="The Inner Billionaire 3D Cover" 
