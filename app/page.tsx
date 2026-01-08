@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import BookSection from "@/components/BookSection";
 import AbhedSection from "@/components/AbhedSection";
+import TransmissionSection from "@/components/TransmissionSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <BookSection />
       <AbhedSection />
+      <TransmissionSection />
       
       <footer className="w-full py-12 border-t border-black/5 dark:border-white/10 bg-white dark:bg-black text-center transition-colors duration-500">
         <h2 className="font-pinyon text-4xl text-gradient-gold mb-4">KM18</h2>
