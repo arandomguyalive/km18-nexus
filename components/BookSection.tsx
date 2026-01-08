@@ -42,41 +42,25 @@ export default function BookSection() {
 
       {/* 3D Book Mockup */}
       <motion.div 
-        initial={{ opacity: 0, x: 50, rotateY: 90 }}
-        whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-        transition={{ duration: 1.2, type: "spring" }}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="flex-1 flex justify-center items-center perspective-[1000px]"
+        className="flex-1 flex justify-center items-center"
       >
-        <div className="relative w-64 h-96 md:w-80 md:h-[500px] preserve-3d group cursor-pointer hover:rotate-y-[-15deg] transition-transform duration-500 ease-out transform-style-3d">
-            {/* 
-               TODO: To use a real image, uncomment the Image component below and remove the 'bg-gradient...' div.
-               Ensure you place 'book-cover.jpg' in the 'public' folder.
-            */}
-            {/* 
-            <div className="absolute inset-0 backface-hidden z-20 rounded-r-md overflow-hidden shadow-2xl">
-                 <Image src="/book-cover.jpg" alt="The Inner Billionaire Cover" fill className="object-cover" />
-                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="relative w-72 h-[450px] md:w-96 md:h-[600px] group cursor-pointer hover:scale-105 transition-transform duration-500 ease-out">
+            {/* Real 3D Image Cover */}
+            <div className="relative w-full h-full drop-shadow-[0_20px_50px_rgba(235,121,85,0.3)]">
+                 <Image 
+                    src="/book-cover-shop.png" 
+                    alt="The Inner Billionaire 3D Cover" 
+                    fill 
+                    className="object-contain"
+                    priority
+                 />
+                 {/* Subtle Glow Overlay */}
+                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
-            */}
-
-            {/* Default CSS Cover (Fallback) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black border-2 border-km-orange/30 rounded-r-md flex flex-col items-center justify-center text-center p-6 shadow-2xl backface-hidden z-20">
-                <div className="border border-km-orange/50 p-4 w-full h-full flex flex-col justify-between items-center">
-                    <span className="font-mono text-xs text-km-orange tracking-[0.3em]">BESTSELLER</span>
-                    <h3 className="font-pinyon text-4xl text-white">The<br/>Inner<br/>Billionaire</h3>
-                    <span className="font-sans text-sm text-gray-400">KINJAL MISHRA</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </div>
-            
-            {/* Spine */}
-            <div className="absolute top-0 left-0 w-12 h-full bg-gray-800 origin-left rotate-y-[-90deg] border-r border-white/10 flex items-center justify-center">
-                <span className="font-pinyon text-white rotate-90 whitespace-nowrap text-xl">The Inner Billionaire</span>
-            </div>
-
-            {/* Back Cover (Pages) */}
-            <div className="absolute top-2 right-0 w-60 h-[380px] md:w-76 md:h-[484px] bg-white translate-z-[-20px] rounded-l-md shadow-lg" />
         </div>
       </motion.div>
     </section>
