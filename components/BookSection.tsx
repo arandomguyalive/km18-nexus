@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function BookSection() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center p-8 bg-black border-t border-white/5">
+    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center p-8 bg-white dark:bg-black border-t border-black/5 dark:border-white/5 transition-colors duration-500">
       
       {/* Text Content */}
       <motion.div 
@@ -19,7 +19,7 @@ export default function BookSection() {
         <h2 className="font-pinyon text-5xl md:text-7xl text-km-orange mb-6">
           The Inner Billionaire
         </h2>
-        <p className="font-sans text-lg md:text-xl text-gray-300 leading-relaxed mb-8 border-l-2 border-km-hot-pink pl-6">
+        <p className="font-sans text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 border-l-2 border-km-hot-pink pl-6">
           "True wealth isn't just in the bank. It's in the mind."
           <br /><br />
           A journey through the psychology of success, redefining what it means to be wealthy in the digital age. Kinjal Mishra's debut masterpiece.
@@ -32,7 +32,7 @@ export default function BookSection() {
                     href="https://www.amazon.in/Inner-Billionaire-27-Day-Journey-Happiest-ebook/dp/B0FTFVD485/ref=" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300 group"
+                    className="flex items-center gap-2 px-6 py-3 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 border border-black/10 dark:border-white/10 rounded-none text-gray-900 dark:text-white font-mono uppercase tracking-widest transition-all duration-300 group"
                 >
                     <ShoppingCart size={18} className="text-km-orange group-hover:scale-110 transition-transform" />
                     <span>Amazon</span>
@@ -41,7 +41,7 @@ export default function BookSection() {
                     href="https://www.flipkart.com/the-inner-billionaire/p/itmb6df04b4ea7bc?pid=9789373357690&lid=LSTBOK9789373357690KW2SE3&marketplace=" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300 group"
+                    className="flex items-center gap-2 px-6 py-3 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 border border-black/10 dark:border-white/10 rounded-none text-gray-900 dark:text-white font-mono uppercase tracking-widest transition-all duration-300 group"
                 >
                     <ShoppingCart size={18} className="text-km-cyan group-hover:scale-110 transition-transform" />
                     <span>Flipkart</span>

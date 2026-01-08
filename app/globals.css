@@ -9,14 +9,32 @@
   --km-blue: #006096;
   --km-cyan: #00D4E5;
   
-  /* Base Theme */
-  --background: #030014; /* Deep space/cyber dark */
+  /* Light Theme Base (Royal/Clean) */
+  --background: #FFFAFA; 
+  --foreground: #1A1A1A;
+  --card: #ffffff;
+  --card-border: #e5e5e5;
+  --section-bg: #F3F4F6;
+  --muted: #6B7280;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Base (Cyber/Space) */
+  --background: #030014;
   --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-border: #262626;
+  --section-bg: #000000;
+  --muted: #9CA3AF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-section-bg: var(--section-bg);
+  --color-muted: var(--muted);
   
   --color-km-orange: var(--km-orange);
   --color-km-pale-pink: var(--km-pale-pink);
@@ -35,14 +53,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom Scrollbar for that 'Tech' feel */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--km-purple);

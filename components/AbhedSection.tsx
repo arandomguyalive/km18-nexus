@@ -5,10 +5,10 @@ import { Lock, EyeOff, ShieldCheck } from "lucide-react";
 
 export default function AbhedSection() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col-reverse md:flex-row items-center justify-center p-8 bg-[#050505] overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col-reverse md:flex-row items-center justify-center p-8 bg-gray-50 dark:bg-[#050505] overflow-hidden transition-colors duration-500">
         
       {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,229,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,229,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,229,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,229,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(0,212,229,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,229,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none" />
 
       {/* Phone Mockup */}
       <motion.div 
@@ -76,11 +76,11 @@ export default function AbhedSection() {
         <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 bg-km-cyan/10 border border-km-cyan/50 rounded text-xs font-mono text-km-cyan tracking-widest">BETA ACCESS</span>
         </div>
-        <h2 className="font-sans font-bold text-5xl md:text-7xl text-white mb-6 tracking-tighter">
+        <h2 className="font-sans font-bold text-5xl md:text-7xl text-gray-900 dark:text-white mb-6 tracking-tighter transition-colors">
             ABHED
             <span className="text-km-cyan">.</span>
         </h2>
-        <p className="font-sans text-lg md:text-xl text-gray-400 leading-relaxed mb-8">
+        <p className="font-sans text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8 transition-colors">
             Social media, declassified. 
             <br />
             Experience true anonymity with military-grade encryption, self-destructing content, and a dystopian aesthetic that breaks the mold.
