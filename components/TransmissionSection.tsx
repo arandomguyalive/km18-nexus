@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Instagram, Youtube, Play, ExternalLink, Radio } from "lucide-react";
 
 // Mock Data for "Transmissions"
+// TODO: PASTE YOUR WIDGET URL HERE (e.g., from Behold.so or Elfsight)
+const INSTAGRAM_WIDGET_URL = ""; 
+
 const SOCIAL_FEED = [
   {
     type: "instagram",
@@ -112,31 +115,43 @@ export default function TransmissionSection() {
                 <span className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">VISUAL LOGS</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {SOCIAL_FEED.map((item, index) => (
-                    <a 
-                        key={item.id} 
-                        href={item.link}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className={`relative group bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 transition-all duration-300 hover:border-km-hot-pink/50 hover:shadow-[0_0_20px_rgba(255,83,178,0.2)] ${index === 2 ? "sm:col-span-2" : ""}`}
-                    >
-                        <div className="flex items-start justify-between mb-3">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[2px]">
-                                <div className="w-full h-full bg-white dark:bg-black rounded-full" />
+            {INSTAGRAM_WIDGET_URL ? (
+                /* LIVE WIDGET MODE */
+                <div className="w-full h-[400px] bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src={INSTAGRAM_WIDGET_URL} 
+                        className="w-full h-full border-none"
+                        loading="lazy"
+                    />
+                </div>
+            ) : (
+                /* FALLBACK MOCK MODE */
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {SOCIAL_FEED.map((item, index) => (
+                        <a 
+                            key={item.id} 
+                            href={item.link}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className={`relative group bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 transition-all duration-300 hover:border-km-hot-pink/50 hover:shadow-[0_0_20px_rgba(255,83,178,0.2)] ${index === 2 ? "sm:col-span-2" : ""}`}
+                        >
+                            <div className="flex items-start justify-between mb-3">
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[2px]">
+                                    <div className="w-full h-full bg-white dark:bg-black rounded-full" />
+                                </div>
+                                <ExternalLink size={14} className="text-gray-400 group-hover:text-km-hot-pink transition-colors" />
                             </div>
-                            <ExternalLink size={14} className="text-gray-400 group-hover:text-km-hot-pink transition-colors" />
-                        </div>
-                        <div className="h-24 bg-gray-100 dark:bg-white/5 rounded-lg mb-3 flex items-center justify-center text-gray-400 text-xs">
-                             {/* Placeholder for actual image */}
-                             <span className="font-mono">IMG_00{item.id}</span>
-                        </div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 font-mono line-clamp-2">
-                            {item.caption}
-                        </p>
-                    </a>
-                ))}
-            </div>
+                            <div className="h-24 bg-gray-100 dark:bg-white/5 rounded-lg mb-3 flex items-center justify-center text-gray-400 text-xs">
+                                {/* Placeholder for actual image */}
+                                <span className="font-mono">IMG_00{item.id}</span>
+                            </div>
+                            <p className="text-xs text-gray-600 dark:text-gray-400 font-mono line-clamp-2">
+                                {item.caption}
+                            </p>
+                        </a>
+                    ))}
+                </div>
+            )}
         </motion.div>
 
       </div>
