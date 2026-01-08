@@ -28,13 +28,23 @@ export default function BookSection() {
         <div className="flex flex-col gap-4">
             <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Available On</h3>
             <div className="flex flex-wrap gap-4">
-                <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300">
-                    <ShoppingCart size={18} />
+                <a 
+                    href="https://www.amazon.in/Inner-Billionaire-27-Day-Journey-Happiest-ebook/dp/B0FTFVD485/ref=" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300 group"
+                >
+                    <ShoppingCart size={18} className="text-km-orange group-hover:scale-110 transition-transform" />
                     <span>Amazon</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300">
-                    <BookOpen size={18} />
-                    <span>Kindle</span>
+                <a 
+                    href="https://www.flipkart.com/the-inner-billionaire/p/itmb6df04b4ea7bc?pid=9789373357690&lid=LSTBOK9789373357690KW2SE3&marketplace=" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300 group"
+                >
+                    <ShoppingCart size={18} className="text-km-cyan group-hover:scale-110 transition-transform" />
+                    <span>Flipkart</span>
                 </a>
             </div>
         </div>
