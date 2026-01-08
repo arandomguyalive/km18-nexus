@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* KM18 Brand Palette */
+  --km-orange: #EB7955;
+  --km-pale-pink: #FFCDEC;
+  --km-hot-pink: #FF53B2;
+  --km-purple: #6B0098;
+  --km-blue: #006096;
+  --km-cyan: #00D4E5;
+  
+  /* Base Theme */
+  --background: #030014; /* Deep space/cyber dark */
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  --color-km-orange: var(--km-orange);
+  --color-km-pale-pink: var(--km-pale-pink);
+  --color-km-hot-pink: var(--km-hot-pink);
+  --color-km-purple: var(--km-purple);
+  --color-km-blue: var(--km-blue);
+  --color-km-cyan: var(--km-cyan);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-pinyon: var(--font-pinyon);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for that 'Tech' feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--km-purple);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--km-hot-pink);
+}
+
+/* Utility for the 'Royal Signature' gradient */
+.text-gradient-gold {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Utility for the 'Cyber' gradient */
+.text-gradient-cyan {
+  background: linear-gradient(to right, #00D4E5, #ffffff, #00D4E5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 212, 229, 0.5);
 }
