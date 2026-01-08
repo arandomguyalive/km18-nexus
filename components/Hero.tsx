@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <h1 className="font-pinyon text-7xl md:text-9xl mb-4 text-gradient-gold drop-shadow-lg tracking-wider">
+          <h1 className="font-pinyon text-7xl md:text-9xl mb-4 text-gradient-gold drop-shadow-lg tracking-wider leading-[1.2] py-4">
             Kinjal Mishra
           </h1>
         </motion.div>

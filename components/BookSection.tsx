@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ShoppingCart, BookOpen } from "lucide-react";
+import Image from "next/image";
 
 export default function BookSection() {
   return (
@@ -22,9 +24,20 @@ export default function BookSection() {
           <br /><br />
           A journey through the psychology of success, redefining what it means to be wealthy in the digital age. Kinjal Mishra's debut masterpiece.
         </p>
-        <button className="px-8 py-3 bg-gradient-to-r from-km-hot-pink to-km-purple rounded-none text-white font-mono uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,83,178,0.4)]">
-          Get the Book
-        </button>
+        
+        <div className="flex flex-col gap-4">
+            <h3 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Available On</h3>
+            <div className="flex flex-wrap gap-4">
+                <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300">
+                    <ShoppingCart size={18} />
+                    <span>Amazon</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-none text-white font-mono uppercase tracking-widest transition-all duration-300">
+                    <BookOpen size={18} />
+                    <span>Kindle</span>
+                </a>
+            </div>
+        </div>
       </motion.div>
 
       {/* 3D Book Mockup */}
@@ -36,14 +49,24 @@ export default function BookSection() {
         className="flex-1 flex justify-center items-center perspective-[1000px]"
       >
         <div className="relative w-64 h-96 md:w-80 md:h-[500px] preserve-3d group cursor-pointer hover:rotate-y-[-15deg] transition-transform duration-500 ease-out transform-style-3d">
-            {/* Front Cover */}
+            {/* 
+               TODO: To use a real image, uncomment the Image component below and remove the 'bg-gradient...' div.
+               Ensure you place 'book-cover.jpg' in the 'public' folder.
+            */}
+            {/* 
+            <div className="absolute inset-0 backface-hidden z-20 rounded-r-md overflow-hidden shadow-2xl">
+                 <Image src="/book-cover.jpg" alt="The Inner Billionaire Cover" fill className="object-cover" />
+                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            </div>
+            */}
+
+            {/* Default CSS Cover (Fallback) */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black border-2 border-km-orange/30 rounded-r-md flex flex-col items-center justify-center text-center p-6 shadow-2xl backface-hidden z-20">
                 <div className="border border-km-orange/50 p-4 w-full h-full flex flex-col justify-between items-center">
                     <span className="font-mono text-xs text-km-orange tracking-[0.3em]">BESTSELLER</span>
                     <h3 className="font-pinyon text-4xl text-white">The<br/>Inner<br/>Billionaire</h3>
                     <span className="font-sans text-sm text-gray-400">KINJAL MISHRA</span>
                 </div>
-                {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
             
