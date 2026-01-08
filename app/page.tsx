@@ -2,11 +2,13 @@ import Hero from "@/components/Hero";
 import BookSection from "@/components/BookSection";
 import AbhedSection from "@/components/AbhedSection";
 import TransmissionSection from "@/components/TransmissionSection";
+import EditorialGallery from "@/components/EditorialGallery";
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen selection:bg-km-cyan selection:text-black">
       <Hero />
+      <EditorialGallery />
       <BookSection />
       <AbhedSection />
       <TransmissionSection />
