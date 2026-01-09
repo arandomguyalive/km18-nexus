@@ -115,32 +115,40 @@ function PhotoCard({ photo, height }: { photo: any, height: string }) {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className={`relative w-full ${height} group overflow-hidden rounded-sm cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500`}
+            className={`relative w-full ${height} group rounded-sm cursor-pointer perspective-[1000px]`}
         >
-            {/* Placeholder / Image Background */}
-            <div className={`w-full h-full ${photo.color} relative`}>
-                <Image 
-                    src={photo.src} 
-                    alt={photo.title} 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-            </div>
-
-            {/* Glass Overlay (The "Vault" Effect) */}
-            <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-[2px] opacity-100 group-hover:opacity-0 group-hover:backdrop-blur-none transition-all duration-700" />
-
-            {/* Text Reveal */}
-            <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-black/80 to-transparent">
-                <span className="font-mono text-xs text-km-cyan tracking-widest uppercase block mb-1">Editorial</span>
-                <h4 className="font-pinyon text-3xl text-white">{photo.title}</h4>
-            </div>
+            {/* The "Neon Glass" Frame Wrapper */}
+            <div className="absolute -inset-[2px] bg-gradient-to-tr from-km-orange/20 via-transparent to-km-cyan/20 rounded-sm z-0 opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-[1px]" />
             
-            {/* Border Accents */}
-            <div className="absolute top-4 left-4 w-[1px] h-0 group-hover:h-12 bg-white transition-all duration-500 delay-100" />
-            <div className="absolute top-4 left-4 h-[1px] w-0 group-hover:w-12 bg-white transition-all duration-500 delay-100" />
-            <div className="absolute bottom-4 right-4 w-[1px] h-0 group-hover:h-12 bg-white transition-all duration-500 delay-100" />
-            <div className="absolute bottom-4 right-4 h-[1px] w-0 group-hover:w-12 bg-white transition-all duration-500 delay-100" />
+            <div className="relative w-full h-full overflow-hidden rounded-sm border border-white/10 dark:border-white/5 bg-black shadow-lg group-hover:shadow-[0_0_30px_rgba(255,83,178,0.3)] transition-all duration-500 ease-out group-hover:scale-[1.02]">
+                
+                {/* Image */}
+                <div className={`w-full h-full ${photo.color} relative`}>
+                    <Image 
+                        src={photo.src} 
+                        alt={photo.title} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                    />
+                </div>
+
+                {/* Glass Overlay (The "Vault" Effect) */}
+                <div className="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-[2px] opacity-100 group-hover:opacity-0 group-hover:backdrop-blur-none transition-all duration-700" />
+
+                {/* Tech Accents: Corner Brackets */}
+                <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-white/50 group-hover:border-km-cyan transition-colors duration-300" />
+                <div className="absolute top-2 right-2 w-4 h-4 border-t border-r border-white/50 group-hover:border-km-hot-pink transition-colors duration-300" />
+                <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l border-white/50 group-hover:border-km-hot-pink transition-colors duration-300" />
+                <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-white/50 group-hover:border-km-cyan transition-colors duration-300" />
+
+                {/* Text Reveal */}
+                <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                    <span className="font-mono text-[10px] text-km-cyan tracking-[0.2em] uppercase block mb-1">
+                        Ref: {photo.id < 10 ? `0${photo.id}` : photo.id} // K-M-18
+                    </span>
+                    <h4 className="font-pinyon text-3xl text-white drop-shadow-md">{photo.title}</h4>
+                </div>
+            </div>
         </motion.div>
     )
 }
