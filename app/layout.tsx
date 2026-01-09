@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pinyon_Script, Prata } from "next/font/google";
+import { Geist, Geist_Mono, Pinyon_Script, Baskervville } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -20,9 +20,9 @@ const pinyonScript = Pinyon_Script({
   subsets: ["latin"],
 });
 
-const prata = Prata({
+const baskervville = Baskervville({
   weight: "400",
-  variable: "--font-prata",
+  variable: "--font-baskervville",
   subsets: ["latin"],
 });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${prata.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${baskervville.variable} antialiased`}
       >
         <ThemeProvider
             attribute="class"
