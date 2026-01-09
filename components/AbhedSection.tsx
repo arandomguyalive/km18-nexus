@@ -97,9 +97,14 @@ export default function AbhedSection() {
             </li>
         </ul>
 
-        <button className="px-8 py-3 border border-km-cyan text-km-cyan font-mono uppercase tracking-widest hover:bg-km-cyan hover:text-black transition-colors duration-300">
+        <a 
+          href="https://cyclotron.vercel.app/blacklist" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="inline-block px-8 py-3 border border-km-cyan text-km-cyan font-mono uppercase tracking-widest hover:bg-km-cyan hover:text-black transition-colors duration-300"
+        >
           Request Access
-        </button>
+        </a>
       </motion.div>
 
     </section>
