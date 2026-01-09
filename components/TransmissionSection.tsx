@@ -86,7 +86,7 @@ export default function TransmissionSection() {
                     src={LATEST_VIDEO.embedUrl} 
                     title="YouTube video player" 
                     frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen
                     className="opacity-80 group-hover:opacity-100 transition-opacity duration-500"
