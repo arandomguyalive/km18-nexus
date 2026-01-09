@@ -77,12 +77,12 @@ export default function EditorialGallery() {
         </div>
 
         {/* Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
             
             {/* Column 1 */}
             <motion.div style={{ y: y1 }} className="md:col-span-4 flex flex-col gap-6">
-                <PhotoCard photo={PHOTOS[0]} height="h-[450px]" />
-                <PhotoCard photo={PHOTOS[2]} height="h-[350px]" />
+                <PhotoCard photo={PHOTOS[0]} height="h-[500px]" />
+                <PhotoCard photo={PHOTOS[2]} height="h-[400px]" />
             </motion.div>
 
             {/* Column 2 (Center - Offset) */}
@@ -93,13 +93,13 @@ export default function EditorialGallery() {
                         "Elegance is the only beauty that never fades."
                     </p>
                  </div>
-                 <PhotoCard photo={PHOTOS[1]} height="h-[500px]" />
+                 <PhotoCard photo={PHOTOS[1]} height="h-[600px]" />
             </motion.div>
 
             {/* Column 3 */}
             <motion.div style={{ y: y2 }} className="md:col-span-4 flex flex-col gap-6">
                 <PhotoCard photo={PHOTOS[3]} height="h-[500px]" />
-                <PhotoCard photo={PHOTOS[4]} height="h-[300px]" />
+                <PhotoCard photo={PHOTOS[4]} height="h-[400px]" />
             </motion.div>
 
         </div>
