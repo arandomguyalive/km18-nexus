@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function BookSection() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center p-8 bg-white dark:bg-black border-t border-black/5 dark:border-white/5 transition-colors duration-500">
+    <section className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center p-8 bg-transparent transition-colors duration-500">
       
       {/* Text Content */}
       <motion.div 
@@ -100,16 +100,6 @@ export default function BookSection() {
             </div>
         </div>
       </motion.div>
-
-      {/* The Void Dip Transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
-        <svg className="relative block w-full h-12 md:h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path 
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113,2,1200,34.19V0Z" 
-                className="fill-gray-50 dark:fill-[#050505]"
-            ></path>
-        </svg>
-      </div>
     </section>
   );
 }

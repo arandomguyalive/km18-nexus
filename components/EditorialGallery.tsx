@@ -54,13 +54,8 @@ export default function EditorialGallery() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section ref={ref} className="relative w-full py-24 px-6 md:px-12 bg-white dark:bg-[#030014] transition-colors duration-500 overflow-hidden">
+    <section ref={ref} className="relative w-full py-24 px-6 md:px-12 bg-transparent transition-colors duration-500 overflow-hidden">
       
-      {/* Background Typography (Decoration) */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5 dark:opacity-10 select-none">
-         <span className="absolute top-10 -left-20 text-[20rem] font-pinyon text-black dark:text-white whitespace-nowrap">Icon</span>
-      </div>
-
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="relative z-10 flex flex-col items-center mb-20">
@@ -103,15 +98,6 @@ export default function EditorialGallery() {
             </motion.div>
 
         </div>
-      </div>
-
-      {/* The Glitch Line Transition */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-km-cyan to-transparent opacity-50 shadow-[0_0_15px_rgba(0,212,229,0.5)]">
-        <motion.div 
-            animate={{ x: ["-100%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="w-1/4 h-full bg-white blur-[2px]"
-        />
       </div>
     </section>
   );

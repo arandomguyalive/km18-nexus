@@ -5,7 +5,7 @@ import { Lock, EyeOff, ShieldCheck } from "lucide-react";
 
 export default function AbhedSection() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col-reverse md:flex-row items-center justify-center p-8 bg-gray-50 dark:bg-[#050505] overflow-hidden transition-colors duration-500">
+    <section className="relative min-h-screen w-full flex flex-col-reverse md:flex-row items-center justify-center p-8 bg-transparent overflow-hidden transition-colors duration-500">
         
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,229,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,229,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(0,212,229,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,229,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none" />

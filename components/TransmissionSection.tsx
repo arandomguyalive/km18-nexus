@@ -39,7 +39,7 @@ const LATEST_VIDEO = {
 
 export default function TransmissionSection() {
   return (
-    <section className="relative w-full py-24 px-6 md:px-12 bg-gray-50 dark:bg-black transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-24 px-6 md:px-12 bg-transparent transition-colors duration-500 overflow-hidden">
       
       {/* Section Header */}
       <div className="relative z-10 flex flex-col items-center mb-16">
