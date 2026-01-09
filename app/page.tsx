@@ -13,8 +13,8 @@ export default function Home() {
         <Hero />
       </div>
 
-      {/* 2. GALLERY - Slides Over */}
-      <div className="sticky top-0 z-10 min-h-screen w-full bg-white dark:bg-[#030014] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+      {/* 2. GALLERY - Slides Over (Relative to allow scrolling tall content) */}
+      <div className="relative z-10 min-h-screen w-full bg-white dark:bg-[#030014] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
         {/* Watermark */}
         <div className="absolute top-20 right-0 md:-right-20 pointer-events-none opacity-5 dark:opacity-10 select-none">
              <span className="font-pinyon text-[15rem] md:text-[30rem] text-black dark:text-white leading-none">Icon</span>
