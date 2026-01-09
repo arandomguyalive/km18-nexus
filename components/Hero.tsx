@@ -16,10 +16,32 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
+          className="flex flex-wrap justify-center gap-x-6 md:gap-x-12 mb-4"
         >
-          <h1 className="font-prata text-7xl md:text-[10rem] mb-4 text-gradient-gold drop-shadow-lg tracking-tight leading-[1.1] py-4 uppercase">
-            Kinjal Mishra
-          </h1>
+          {["Kinjal", "Mishra"].map((word, wordIndex) => (
+            <div key={wordIndex} className="flex">
+              {word.split("").map((char, charIndex) => (
+                <motion.span
+                  key={charIndex}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    textShadow: ["0 0 0px rgba(212,175,55,0)", "0 0 15px rgba(212,175,55,0.5)", "0 0 0px rgba(212,175,55,0)"]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: (wordIndex * 5 + charIndex) * 0.1, // Stagger effect
+                    ease: "easeInOut"
+                  }}
+                  className="font-prata text-7xl md:text-[10rem] text-[#D4AF37] tracking-tight leading-[1.1] uppercase inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+          ))}
         </motion.div>
 
         <motion.div
