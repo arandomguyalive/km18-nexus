@@ -104,6 +104,15 @@ export default function EditorialGallery() {
 
         </div>
       </div>
+
+      {/* The Glitch Line Transition */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-km-cyan to-transparent opacity-50 shadow-[0_0_15px_rgba(0,212,229,0.5)]">
+        <motion.div 
+            animate={{ x: ["-100%", "100%"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            className="w-1/4 h-full bg-white blur-[2px]"
+        />
+      </div>
     </section>
   );
 }

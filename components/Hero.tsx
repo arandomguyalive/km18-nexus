@@ -45,6 +45,9 @@ export default function Hero() {
           </span>
         </motion.div>
       </div>
+
+      {/* The Mist Transition */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white dark:from-[#030014] to-transparent z-20 pointer-events-none" />
     </section>
   );
 }
