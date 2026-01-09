@@ -11,35 +11,35 @@ const PHOTOS = [
     size: "tall", // Portrait
     title: "Visionary",
     color: "bg-km-orange/20",
-    src: "/photo-1.jpg" // Placeholder path
+    src: "/photo-1.jpeg" // Placeholder path
   },
   {
     id: 2,
     size: "wide", // Landscape
     title: "The Author",
     color: "bg-km-hot-pink/20",
-    src: "/photo-2.jpg"
+    src: "/photo-2.jpeg"
   },
   {
     id: 3,
     size: "small", // Square
     title: "Unfiltered",
     color: "bg-km-cyan/20",
-    src: "/photo-3.jpg"
+    src: "/photo-3.jpeg"
   },
   {
     id: 4,
     size: "tall", // Portrait
     title: "KM18 Era",
     color: "bg-km-purple/20",
-    src: "/photo-4.jpg"
+    src: "/photo-4.jpeg"
   },
   {
     id: 5,
     size: "small",
     title: "Backstage",
     color: "bg-gray-500/20",
-    src: "/photo-5.jpg"
+    src: "/photo-5.jpeg"
   }
 ];
 
@@ -119,16 +119,12 @@ function PhotoCard({ photo, height }: { photo: any, height: string }) {
         >
             {/* Placeholder / Image Background */}
             <div className={`w-full h-full ${photo.color} relative`}>
-                {/* 
-                   TODO: UNCOMMENT BELOW WHEN YOU HAVE IMAGES
-                   <Image src={photo.src} alt={photo.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                */}
-                
-                {/* Placeholder Content (Remove when real images are added) */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-km-hot-pink/50 group-hover:text-km-hot-pink transition-colors">
-                    <Camera size={48} strokeWidth={1} />
-                    <span className="mt-2 font-mono text-xs opacity-50 uppercase tracking-widest">Add Photo</span>
-                </div>
+                <Image 
+                    src={photo.src} 
+                    alt={photo.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
             </div>
 
             {/* Glass Overlay (The "Vault" Effect) */}
