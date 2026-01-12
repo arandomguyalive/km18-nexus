@@ -16,36 +16,36 @@ const PHOTOS: Photo[] = [
   {
     id: 1,
     size: "tall", // Portrait
-    title: "Visionary",
-    color: "bg-km-orange/20",
+    title: "Royal",
+    color: "bg-km-purple/20",
     src: "/photo-1.jpeg" // Placeholder path
   },
   {
     id: 2,
     size: "wide", // Landscape
-    title: "The Author",
-    color: "bg-km-hot-pink/20",
+    title: "Hot",
+    color: "bg-red-500/20",
     src: "/photo-2.jpeg"
   },
   {
     id: 3,
     size: "small", // Square
-    title: "Unfiltered",
-    color: "bg-km-cyan/20",
+    title: "Classic",
+    color: "bg-gray-500/20",
     src: "/photo-3.jpeg"
   },
   {
     id: 4,
     size: "tall", // Portrait
-    title: "KM18 Era",
-    color: "bg-km-purple/20",
+    title: "Timeless",
+    color: "bg-km-orange/20",
     src: "/photo-4.jpeg"
   },
   {
     id: 5,
     size: "small",
-    title: "Backstage",
-    color: "bg-gray-500/20",
+    title: "Divine",
+    color: "bg-km-cyan/20",
     src: "/photo-5.jpeg"
   }
 ];
