@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShoppingCart, BookOpen } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 export default function BookSection() {
@@ -20,9 +20,9 @@ export default function BookSection() {
           The Inner Billionaire
         </h2>
         <p className="font-sans text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 border-l-2 border-km-hot-pink pl-6">
-          "True wealth isn't just in the bank. It's in the mind."
+          &quot;True wealth isn&apos;t just in the bank. It&apos;s in the mind.&quot;
           <br /><br />
-          A journey through the psychology of success, redefining what it means to be wealthy in the digital age. Kinjal Mishra's debut masterpiece.
+          A journey through the psychology of success, redefining what it means to be wealthy in the digital age. Kinjal Mishra&apos;s debut masterpiece.
         </p>
         
         <div className="flex flex-col gap-4">

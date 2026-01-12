@@ -36,11 +36,23 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="flex flex-col md:flex-row gap-4 items-center justify-center font-mono text-sm md:text-lg tracking-[0.3em] text-km-purple dark:text-km-pale-pink/80 uppercase"
+          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 max-w-4xl mx-auto font-mono text-xs md:text-sm tracking-[0.2em] text-km-purple dark:text-km-pale-pink/80 uppercase"
         >
-          <span>The Inner Billionaire</span>
-          <span className="hidden md:inline text-km-cyan">•</span>
-          <span>Architect of Abhed</span>
+          {[
+            "Author",
+            "Founder",
+            "Investor",
+            "Global Icon",
+            "Face of UAE",
+            "Public Speaker",
+          ].map((item, index, array) => (
+            <div key={item} className="flex items-center gap-4">
+              <span>{item}</span>
+              {index < array.length - 1 && (
+                <span className="hidden md:inline text-km-cyan">•</span>
+              )}
+            </div>
+          ))}
         </motion.div>
 
         <motion.div

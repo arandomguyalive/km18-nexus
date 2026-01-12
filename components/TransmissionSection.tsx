@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, Youtube, Play, ExternalLink, Radio } from "lucide-react";
+import { Instagram, Youtube, ExternalLink, Radio } from "lucide-react";
 
 // Mock Data for "Transmissions"
 // TODO: PASTE YOUR WIDGET URL HERE (e.g., from Behold.so or Elfsight)

@@ -3,9 +3,16 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { Camera } from "lucide-react";
 
-const PHOTOS = [
+interface Photo {
+  id: number;
+  size: string;
+  title: string;
+  color: string;
+  src: string;
+}
+
+const PHOTOS: Photo[] = [
   {
     id: 1,
     size: "tall", // Portrait
@@ -85,7 +92,7 @@ export default function EditorialGallery() {
                  {/* Quote Card */}
                  <div className="h-[200px] flex items-center justify-center p-6 text-center">
                     <p className="font-pinyon text-3xl md:text-4xl text-gray-800 dark:text-gray-200 leading-tight">
-                        "Elegance is the only beauty that never fades."
+                        &quot;Elegance is the only beauty that never fades.&quot;
                     </p>
                  </div>
                  <PhotoCard photo={PHOTOS[1]} height="h-[600px]" />
@@ -103,7 +110,7 @@ export default function EditorialGallery() {
   );
 }
 
-function PhotoCard({ photo, height }: { photo: any, height: string }) {
+function PhotoCard({ photo, height }: { photo: Photo, height: string }) {
     return (
         <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -139,7 +146,7 @@ function PhotoCard({ photo, height }: { photo: any, height: string }) {
                 {/* Text Reveal */}
                 <div className="absolute bottom-0 left-0 w-full p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
                     <span className="font-mono text-[10px] text-km-cyan tracking-[0.2em] uppercase block mb-1">
-                        Ref: {photo.id < 10 ? `0${photo.id}` : photo.id} // K-M-18
+                        Ref: {photo.id < 10 ? `0${photo.id}` : photo.id} {/* K-M-18 */}
                     </span>
                     <h4 className="font-pinyon text-3xl text-white drop-shadow-md">{photo.title}</h4>
                 </div>
