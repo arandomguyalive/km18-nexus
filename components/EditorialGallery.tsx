@@ -72,7 +72,7 @@ const PHOTOS: Photo[] = [
     size: "small",
     title: "Divine",
     color: "bg-km-cyan/20",
-    src: "/pictures/Divine/IMG_0198.jpg",
+    src: "/photo-5.jpeg",
     gallery: [
         "/pictures/Divine/IMG_0198.jpg",
         "/pictures/Divine/IMG_0847.jpg",
@@ -245,12 +245,12 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
         >
             {/* Close Button */}
             <button 
                 onClick={onClose} 
-                className="absolute top-6 right-6 z-50 text-white/50 hover:text-white hover:rotate-90 transition-all duration-300"
+                className="absolute top-6 right-6 z-[100] text-white/50 hover:text-white hover:rotate-90 transition-all duration-300"
             >
                 <X size={32} />
             </button>
