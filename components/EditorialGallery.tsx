@@ -240,32 +240,112 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
         setCurrentIndex((prev) => (prev - 1 + photo.gallery.length) % photo.gallery.length);
     };
 
+    // Dynamic Theme Configuration based on Title
+    const getTheme = (title: string) => {
+        switch (title) {
+            case "Royal":
+                return {
+                    bg: "bg-gradient-to-br from-[#1a0524] via-black to-[#0f0214]", // Deep Regal Purple
+                    border: "border-yellow-500/30",
+                    accent: "text-yellow-500",
+                    glow: "shadow-[0_0_50px_rgba(234,179,8,0.1)]",
+                    font: "font-serif",
+                    watermark: "text-yellow-500/5",
+                    bracket: "border-yellow-500/50"
+                };
+            case "Hot":
+                return {
+                    bg: "bg-gradient-to-br from-[#240505] via-black to-[#140202]", // Deep Red
+                    border: "border-red-500/30",
+                    accent: "text-red-500",
+                    glow: "shadow-[0_0_50px_rgba(239,68,68,0.1)]",
+                    font: "font-sans",
+                    watermark: "text-red-500/5",
+                    bracket: "border-red-500/50"
+                };
+            case "Classic":
+                return {
+                    bg: "bg-gradient-to-br from-[#1a1a1a] via-black to-[#0a0a0a]", // Monochrome
+                    border: "border-gray-400/30",
+                    accent: "text-gray-200",
+                    glow: "shadow-[0_0_50px_rgba(255,255,255,0.05)]",
+                    font: "font-serif",
+                    watermark: "text-white/5",
+                    bracket: "border-gray-400/50"
+                };
+            case "Timeless":
+                return {
+                    bg: "bg-gradient-to-br from-[#1c1206] via-black to-[#0d0702]", // Sepia/Bronze
+                    border: "border-orange-400/30",
+                    accent: "text-orange-300",
+                    glow: "shadow-[0_0_50px_rgba(251,146,60,0.1)]",
+                    font: "font-serif",
+                    watermark: "text-orange-300/5",
+                    bracket: "border-orange-400/50"
+                };
+            case "Divine":
+                return {
+                    bg: "bg-gradient-to-br from-[#051a24] via-black to-[#020f14]", // Cyan/Deep Teal
+                    border: "border-cyan-400/30",
+                    accent: "text-cyan-300",
+                    glow: "shadow-[0_0_50px_rgba(34,211,238,0.1)]",
+                    font: "font-mono",
+                    watermark: "text-cyan-300/5",
+                    bracket: "border-cyan-400/50"
+                };
+            default:
+                return {
+                    bg: "bg-black/95",
+                    border: "border-white/10",
+                    accent: "text-white",
+                    glow: "shadow-none",
+                    font: "font-sans",
+                    watermark: "text-white/5",
+                    bracket: "border-white/50"
+                };
+        }
+    };
+
+    const theme = getTheme(photo.title);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            className={`fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 backdrop-blur-3xl ${theme.bg}`}
         >
+            {/* Massive Watermark Background */}
+            <div className={`absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden`}>
+                <span className={`font-pinyon text-[15rem] md:text-[30rem] ${theme.watermark} opacity-10 rotate-[-10deg]`}>
+                    {photo.title}
+                </span>
+            </div>
+
             {/* Close Button */}
             <button 
                 onClick={onClose} 
-                className="absolute top-6 right-6 z-[100] text-white/50 hover:text-white hover:rotate-90 transition-all duration-300"
+                className={`absolute top-6 right-6 z-[110] text-white/50 hover:text-white hover:rotate-90 transition-all duration-300`}
             >
                 <X size={32} />
             </button>
 
             {/* Main Content */}
-            <div className="relative w-full max-w-6xl h-full flex flex-col md:flex-row gap-8 items-center justify-center">
+            <div className="relative z-10 w-full max-w-7xl h-full flex flex-col md:flex-row gap-8 items-center justify-center">
                 
                 {/* Main Image Display */}
-                <div className="relative w-full h-[50vh] md:h-[80vh] flex-1">
+                <div className="relative w-full h-[50vh] md:h-[80vh] flex-1 perspective-[2000px]">
+                    
+                    {/* Decorative Brackets */}
+                    <div className={`absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 ${theme.bracket} opacity-50`} />
+                    <div className={`absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 ${theme.bracket} opacity-50`} />
+
                     <motion.div
                         key={currentIndex}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, ease: "circOut" }}
-                        className="relative w-full h-full rounded-sm overflow-hidden shadow-2xl border border-white/10"
+                        initial={{ opacity: 0, rotateY: 10, scale: 0.9 }}
+                        animate={{ opacity: 1, rotateY: 0, scale: 1 }}
+                        transition={{ duration: 0.6, ease: "circOut" }}
+                        className={`relative w-full h-full rounded-sm overflow-hidden ${theme.glow} border ${theme.border} bg-black/20 backdrop-blur-sm`}
                     >
                          <Image 
                             src={photo.gallery[currentIndex]} 
@@ -277,49 +357,61 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
                         />
                     </motion.div>
 
-                    {/* Navigation Arrows (Overlay) */}
+                    {/* Navigation Arrows (Floating) */}
                     <button 
                         onClick={prevPhoto} 
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all"
+                        className={`absolute -left-12 top-1/2 -translate-y-1/2 p-4 text-white/30 hover:text-white transition-colors hidden md:block`}
                     >
-                        <ChevronLeft size={24} />
+                        <ChevronLeft size={48} />
                     </button>
                     <button 
                         onClick={nextPhoto} 
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/20 hover:bg-black/50 text-white rounded-full backdrop-blur-sm transition-all"
+                        className={`absolute -right-12 top-1/2 -translate-y-1/2 p-4 text-white/30 hover:text-white transition-colors hidden md:block`}
                     >
-                        <ChevronRight size={24} />
+                        <ChevronRight size={48} />
                     </button>
+
+                    {/* Mobile Nav (Bottom Overlay) */}
+                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-8 md:hidden z-20">
+                        <button onClick={prevPhoto} className="p-2 bg-black/50 rounded-full text-white backdrop-blur-md border border-white/10"><ChevronLeft/></button>
+                        <button onClick={nextPhoto} className="p-2 bg-black/50 rounded-full text-white backdrop-blur-md border border-white/10"><ChevronRight/></button>
+                     </div>
                 </div>
 
-                {/* Info & Thumbnails (Sidebar on Desktop, Bottom on Mobile) */}
-                <div className="w-full md:w-80 flex flex-col gap-6">
+                {/* Info & Thumbnails (Sidebar) */}
+                <div className="w-full md:w-96 flex flex-col gap-6 bg-black/40 p-6 rounded-lg border border-white/5 backdrop-blur-xl">
                     <div>
                         <motion.h2 
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="font-pinyon text-5xl md:text-6xl text-white mb-2"
+                            className={`font-pinyon text-6xl md:text-7xl ${theme.accent} mb-2 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]`}
                         >
                             {photo.title}
                         </motion.h2>
+                        <motion.div 
+                             initial={{ width: 0 }}
+                             animate={{ width: "100%" }}
+                             transition={{ delay: 0.4, duration: 0.8 }}
+                             className={`h-[1px] bg-gradient-to-r from-transparent via-${theme.accent.split('-')[1]}-500 to-transparent mb-4 opacity-50`}
+                        />
                         <motion.p 
                              initial={{ y: 20, opacity: 0 }}
                              animate={{ y: 0, opacity: 1 }}
                              transition={{ delay: 0.3 }}
-                             className="font-mono text-xs text-km-cyan tracking-[0.2em] uppercase"
+                             className={`font-mono text-xs ${theme.accent} tracking-[0.2em] uppercase opacity-80`}
                         >
-                            Collection 0{photo.id} // {currentIndex + 1} of {photo.gallery.length}
+                            No. 0{photo.id} // Frame {currentIndex + 1} / {photo.gallery.length}
                         </motion.p>
                     </div>
 
-                    <div className="grid grid-cols-4 md:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                         {photo.gallery.map((src, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
                                 className={`relative aspect-square rounded-sm overflow-hidden border transition-all duration-300 ${
-                                    currentIndex === idx ? "border-km-hot-pink opacity-100 scale-105" : "border-transparent opacity-50 hover:opacity-80"
+                                    currentIndex === idx ? `${theme.border.replace('/30', '')} scale-110 shadow-lg z-10` : "border-transparent opacity-40 hover:opacity-80 grayscale hover:grayscale-0"
                                 }`}
                             >
                                 <Image src={src} alt="Thumbnail" fill className="object-cover" unoptimized />
@@ -327,11 +419,11 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
                         ))}
                     </div>
                     
-                    <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent my-4" />
-                    
-                    <p className="font-sans text-sm text-gray-400 italic">
-                        "Captured in the moment, preserved for eternity."
-                    </p>
+                    <div className="mt-auto">
+                        <p className={`font-sans text-xs ${theme.accent} opacity-60 italic leading-relaxed text-right`}>
+                            "Every frame is a window into a universe of its own styling."
+                        </p>
+                    </div>
                 </div>
             </div>
 
