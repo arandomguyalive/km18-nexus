@@ -8,9 +8,10 @@ This log tracks the development progress of the KM18 Nexus digital headquarters.
 ### [2026-01-29] Gallery Content, Redesign & Theme Unification
 **Phase: Polish & Content Integration**
 
-1.  **Assets Integration (Divine Collection):**
+1.  **Assets Integration (Divine & Royal Collections):**
     *   Added 30 high-resolution images to `public/pictures/Divine`.
-    *   Updated `EditorialGallery.tsx` to reference these new assets.
+    *   Added 19 high-resolution images to `public/pictures/Royal` (converted 3 HEIC files to JPG).
+    *   Updated `EditorialGallery.tsx` to reference these new assets for both categories.
     *   **Fix:** Resolved 404/400 errors by committing the actual image files (previously untracked) and adding the `unoptimized` prop to Next.js Image components to handle large local files without processing failures.
 
 2.  **Gallery Modal Redesign:**

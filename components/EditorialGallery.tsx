@@ -20,12 +20,30 @@ const PHOTOS: Photo[] = [
     size: "tall", // Portrait
     title: "Royal",
     color: "bg-km-purple/20",
-    src: "/photo-1.jpeg",
+    src: "/pictures/Royal/IMG_0014.jpg",
     gallery: [
-        "/photo-1.jpeg",
-        "/photo-2.jpeg",
-        "/photo-3.jpeg",
-        "/photo-4.jpeg"
+        "/pictures/Royal/IMG_0014.jpg",
+        "/pictures/Royal/IMG_0278.jpg",
+        "/pictures/Royal/IMG_1298.jpg",
+        "/pictures/Royal/IMG_1353.jpg",
+        "/pictures/Royal/IMG_2148.jpg",
+        "/pictures/Royal/IMG_2188.jpg",
+        "/pictures/Royal/IMG_3088.jpg",
+        "/pictures/Royal/IMG_4335.jpg",
+        "/pictures/Royal/IMG_4687.jpg",
+        "/pictures/Royal/IMG_4771.jpg",
+        "/pictures/Royal/IMG_5681.jpg",
+        "/pictures/Royal/IMG_6273.jpg",
+        "/pictures/Royal/IMG_7230.jpg",
+        "/pictures/Royal/IMG_7404.jpg",
+        "/pictures/Royal/IMG_7522.jpg",
+        "/pictures/Royal/IMG_7986.jpg",
+        "/pictures/Royal/IMG_8661.jpg",
+        "/pictures/Royal/IMG_8665.jpg",
+        "/pictures/Royal/IMG_9178.jpg",
+        "/pictures/Royal/IMG_9254.jpg",
+        "/pictures/Royal/IMG_9968.jpg",
+        "/pictures/Royal/IMG_0142.jpg"
     ]
   },
   {
