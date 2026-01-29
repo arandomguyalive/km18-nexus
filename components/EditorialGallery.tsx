@@ -343,9 +343,9 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
             {/* Close Button */}
             <button 
                 onClick={onClose} 
-                className={`absolute top-6 right-6 z-[110] text-white/50 hover:text-white hover:rotate-90 transition-all duration-300`}
+                className={`absolute top-4 right-4 md:top-8 md:right-8 z-[1000] p-2 rounded-full bg-black/50 border border-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-all duration-300 group`}
             >
-                <X size={32} />
+                <X size={24} className="md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
             </button>
 
             {/* Main Content */}

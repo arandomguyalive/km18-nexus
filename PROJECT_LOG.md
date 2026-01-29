@@ -13,6 +13,7 @@ This log tracks the development progress of the KM18 Nexus digital headquarters.
     *   Added 19 high-resolution images to `public/pictures/Royal` (converted 3 HEIC files to JPG).
     *   Updated `EditorialGallery.tsx` to reference these new assets for both categories.
     *   **Fix:** Resolved 404/400 errors by committing the actual image files (previously untracked) and adding the `unoptimized` prop to Next.js Image components to handle large local files without processing failures.
+    *   **UX Improvement:** Significantly improved visibility and accessibility of the gallery close button with high z-index, background blur, and hover effects.
 
 2.  **Gallery Modal Redesign:**
     *   Implemented a completely new, immersive `GalleryModal`.
