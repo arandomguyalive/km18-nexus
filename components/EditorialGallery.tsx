@@ -203,7 +203,8 @@ function PhotoCard({ photo, height, onClick }: { photo: Photo, height: string, o
                         src={photo.src} 
                         alt={photo.title} 
                         fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        unoptimized
                     />
                 </div>
 
@@ -271,7 +272,8 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
                             alt={`${photo.title} - ${currentIndex + 1}`} 
                             fill 
                             className="object-contain" 
-                            priority 
+                            priority
+                            unoptimized
                         />
                     </motion.div>
 
@@ -320,7 +322,7 @@ function GalleryModal({ photo, onClose }: { photo: Photo, onClose: () => void })
                                     currentIndex === idx ? "border-km-hot-pink opacity-100 scale-105" : "border-transparent opacity-50 hover:opacity-80"
                                 }`}
                             >
-                                <Image src={src} alt="Thumbnail" fill className="object-cover" />
+                                <Image src={src} alt="Thumbnail" fill className="object-cover" unoptimized />
                             </button>
                         ))}
                     </div>
